@@ -29,11 +29,15 @@ Apellido: <b>${formValues.surname}</b>
 <p>
 edad: <b>${formValues.age}</b>
 </p>
+
+<img id="pipboy-man" src="assets/pipboy-man.png" alt="pipboy thumbs up"/>
 <button type="button" onclick="resetForm()">
    Reset
 </button>
 
 `);
+
+document.getElementById('arm').classList.add('arm-in')
 }
 
 function onInput(key, value) {
@@ -76,9 +80,11 @@ function setInitialContent() {
 function resetForm() {
   resetFormvalues();
   setInitialContent();
+  document.getElementById('arm').classList.remove('arm-in')
 }
 
 // initial content
 setTimeout(() => {
   setInitialContent();
 }, 2000);
+

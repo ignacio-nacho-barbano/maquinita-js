@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La maquinita de JS</title>
+    <link rel="icon" type="image/x-icon" href="assets/pipboy-man.png">
 
 </head>
 <style>
@@ -39,21 +40,25 @@
 
     #animated::after {
         margin-left: var(--space-3);
-        content:"";
+        content: "";
         animation: dots 800ms infinite;
     }
 
     body {
         overflow: hidden;
         font-family: 'Share Tech Mono', monospace;
-        background: linear-gradient(35deg, black, rgb(59, 62, 52));
         height: 100vh;
         width: 100vw;
         display: flex;
         flex-direction: column;
+        background-color: #161616;
+        background-size: 100px;
+        background-repeat: space;
+        background-image: url('assets/vault-tec.svg');
     }
 
     main {
+        z-index: 1;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -63,6 +68,7 @@
 
 
     .screen {
+
         background-repeat: no-repeat;
         background-size: 1000px auto;
         background-position: center center;
@@ -125,6 +131,24 @@
     button[type="button"] {
         margin-top: auto;
     }
+
+    #pipboy-man {
+        min-height: 0;
+        object-fit: contain;
+        filter: saturate(.5) hue-rotate(48deg);
+    }
+
+    #arm {
+        position: absolute;
+        top: -150px;
+        width: 2200px;
+        left: -2200px;
+        transition: left 1s;
+    }
+
+    #arm.arm-in {
+        left: 0;
+    }
 </style>
 
 <body>
@@ -135,6 +159,7 @@
                 <p id="animated">Loading</p>
             </div>
     </main>
+    <img id="arm" src="assets/arm.png" alt="pipboy arm" />
 </body>
 <script src="script.js"></script>
 
