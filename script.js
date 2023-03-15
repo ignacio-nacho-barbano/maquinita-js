@@ -59,7 +59,7 @@ function onInput(key, value) {
 }
 
 function setInitialContent() {
-  showInScreen(`
+  showInScreen(/* html */`
     <div>
     <h2>Ingrese 3 valores</h2>
     <p>[presione TAB para continuar]</p>
