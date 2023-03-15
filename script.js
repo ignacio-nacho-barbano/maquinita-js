@@ -18,7 +18,7 @@ function resetFormvalues() {
 }
 
 function onSubmit() {
-  showInScreen(`
+  showInScreen(/* html */`
 <h2> Valores ingresados: </h2>
 <p>
 Nombre: <b>${formValues.name}</b>
