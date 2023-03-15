@@ -1,9 +1,3 @@
-const screenContentDiv = document.getElementById("screen-content");
-let nuevoContenido;
-
-function showInScreen(content) {
-  screenContentDiv.innerHTML = content;
-}
 
 const formValues = {
   name: "",
@@ -18,7 +12,7 @@ function resetFormvalues() {
 }
 
 function onSubmit() {
-  showInScreen(/* html */`
+  document.getElementById("screen-content").innerHTML =/* html */`
 <h2> Valores ingresados: </h2>
 <p>
 Nombre: <b>${formValues.name}</b>
@@ -34,10 +28,9 @@ edad: <b>${formValues.age}</b>
 <button type="button" onclick="resetForm()">
    Reset
 </button>
+`;
 
-`);
-
-document.getElementById('arm').classList.add('arm-in')
+// document.getElementById('arm').classList.add('arm-in')
 }
 
 function onInput(key, value) {
@@ -59,7 +52,7 @@ function onInput(key, value) {
 }
 
 function setInitialContent() {
-  showInScreen(/* html */`
+  document.getElementById("screen-content").innerHTML =/* html */`
     <div>
     <h2>Ingrese 3 valores</h2>
     <p>[presione TAB para continuar]</p>
@@ -74,7 +67,7 @@ function setInitialContent() {
     <label for="age">Edad</label>
     <input id="age" type="number" oninput="onInput(this.id,this.value)">
     </form>
-    </div>`);
+    </div>`;
 }
 
 function resetForm() {
